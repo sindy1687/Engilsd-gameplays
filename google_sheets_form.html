@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📬 玩家信箱</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Microsoft JhengHei', Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .header p {
+      opacity: 0.9;
+      font-size: 1.1em;
+    }
+
+    .content {
+      padding: 30px;
+    }
+
+    .input-group {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    input {
+      flex: 1;
+      min-width: 200px;
+      padding: 15px 20px;
+      border: 2px solid #e1e5e9;
+      border-radius: 10px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+
+    button {
+      padding: 15px 30px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      min-width: 120px;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    .mail {
+      border: 2px solid #e1e5e9;
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .mail:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+
+    .mail:active {
+      transform: translateY(0);
+    }
+
+    .mail.clicked {
+      animation: clickEffect 0.3s ease;
+    }
+
+    @keyframes clickEffect {
+      0% { transform: scale(1); }
+      50% { transform: scale(0.98); }
+      100% { transform: scale(1); }
+    }
+
+    .mail::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .unread {
+      background: linear-gradient(135deg, #fff9e6 0%, #fff5d6 100%);
+      border-color: #ffd700;
+      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
+    }
+
+    .unread::before {
+      background: linear-gradient(135deg, #ffd700 0%, #ffb347 100%);
+    }
+
+    .read {
+      background: #f8f9fa;
+      border-color: #e1e5e9;
+      opacity: 0.8;
+    }
+
+    .mail.read::before {
+      background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+    }
+
+    .mail h3 {
+      color: #2c3e50;
+      margin-bottom: 10px;
+      font-size: 1.3em;
+    }
+
+    .mail p {
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .mail small {
+      color: #888;
+      font-size: 0.9em;
+    }
+
+    .claim-btn {
+      background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+      padding: 10px 20px;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .claim-btn:hover {
+      box-shadow: 0 10px 20px rgba(40, 167, 69, 0.3);
+    }
+
+    .empty-message {
+      text-align: center;
+      padding: 60px 20px;
+      color: #888;
+      font-size: 1.2em;
+    }
+
+    .loading {
+      text-align: center;
+      padding: 40px;
+      color: #667eea;
+    }
+
+    .error {
+      background: #f8d7da;
+      color: #721c24;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 15px 0;
+      border: 1px solid #f5c6cb;
+    }
+
+    .success {
+      background: #d4edda;
+      color: #155724;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 15px 0;
+      border: 1px solid #c3e6cb;
+    }
+
+    .demo-mode {
+      background: #fff3cd;
+      color: #856404;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 15px 0;
+      border: 1px solid #ffeaa7;
+    }
+
+
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 10px;
+        border-radius: 15px;
+      }
+      
+      .header {
+        padding: 20px;
+      }
+      
+      .header h1 {
+        font-size: 2em;
+      }
+      
+      .content {
+        padding: 20px;
+      }
+      
+      .input-group {
+        flex-direction: column;
+      }
+      
+      input, button {
+        width: 100%;
+      }
+
+      /* 手機版音樂按鈕調整 */
+      #audioControls {
+        top: 20px;
+        right: 20px;
+      }
+
+      #toggleMusic {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+      }
+
+      /* 手機版返回首頁按鈕調整 */
+      a[href="index.html"] {
+        top: 20px;
+        left: 20px;
+        padding: 12px 20px;
+        font-size: 1rem;
+      }
+    }
+
+    /* 音樂按鈕動畫 */
+    @keyframes musicPulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    #toggleMusic.playing {
+      animation: musicPulse 2s infinite;
+    }
+
+    /* 返回首頁按鈕懸停效果 */
+    a[href="index.html"]:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    a[href="index.html"]:active {
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+<body>
+  <!-- 返回首頁按鈕 -->
+  <a href="index.html" style="
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    padding: 15px 30px;
+    background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+  ">← 返回首頁</a>
+
+  <!-- 背景音樂控制按鈕 -->
+  <div id="audioControls" style="position: fixed; top: 30px; right: 30px; z-index: 1000;">
+    <button id="toggleMusic" title="背景音樂" style="
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+      width: 50px;
+      height: 50px;
+    ">🔊</button>
+  </div>
+
+  <!-- 背景音樂元素 -->
+  <audio id="backgroundMusic" loop>
+    <source src="sound/午後放鬆時光（純音樂）.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="container">
+    <div class="header">
+      <h1>📬 玩家信箱</h1>
+      <p>查看您的遊戲通知和獎勵</p>
+    </div>
+    
+    <div class="content">
+      <div class="input-group">
+        <input id="playerName" placeholder="請輸入您的玩家名稱" type="text">
+        <button onclick="loadInbox()">📥 查看信箱</button>
+        <button onclick="generateRandomName()" style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%);">🎲 隨機名稱</button>
+        <button onclick="addNewPlayer()" style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);">➕ 新增玩家</button>
+        <button onclick="clearRememberedAccount()" style="background: linear-gradient(135deg, #6c757d 0%, #495057 100%);">🗑️ 清除記憶</button>
+      </div>
+      
+      <div style="background: #e8f4fd; border: 1px solid #bee5eb; border-radius: 10px; padding: 15px; margin-bottom: 20px; color: #0c5460;">
+        <strong>💡 使用提示：</strong>
+        <ul style="margin: 10px 0 0 20px;">
+          <li>輸入您的玩家名稱後點擊「📥 查看信箱」即可自動新增到系統</li>
+          <li>使用「🎲 隨機名稱」可以快速生成一個隨機名稱</li>
+          <li>使用「➕ 新增玩家」可以手動新增玩家到系統</li>
+          <li>首次使用時系統會自動為您建立歡迎訊息</li>
+          <li><strong>💡 新功能：</strong>點擊任何訊息即可標記為已讀</li>
+          <li><strong>🔐 記憶功能：</strong>系統會自動記住您的帳號，下次進入時自動填入</li>
+          <li><strong>🎁 新玩家禮包：</strong>首次註冊將自動獲得邀請碼</li>
+          <li><strong>⚠️ 帳號限制：</strong>每台電腦只能註冊一個帳號，確保遊戲公平性</li>
+        </ul>
+      </div>
+      
+
+
+      <div id="status"></div>
+      <div id="mailbox"></div>
+    </div>
+  </div>
+
+  <script>
+    // 檢查是否為測試模式
+    const urlParams = new URLSearchParams(window.location.search);
+    const isTestMode = urlParams.get('test') === '1';
+    
+    // 測試模式的 API URL（使用模擬資料）
+    const TEST_API = "https://script.google.com/macros/s/AKfycbxhXiQ8G7QnT5k3W-nFgAIBqsmCEnV4_wlqOSPwL-cyetKlq6T6CVmjXYkOZ5Y2jzHP/exec";
+    
+    // 實際的 API URL（您的新部署）
+    const PROD_API = "https://script.google.com/macros/s/AKfycbxvJg2sgkye1vu_uRk2MhqwT4kl9GC7GneTarpkKSNyrWCaDWHQWpxNRtKA95OU0P_E/exec";
+    
+    // 根據模式選擇 API
+    const API = isTestMode ? TEST_API : PROD_API;
+
+    function showStatus(message, type = 'info') {
+      const status = document.getElementById('status');
+      status.innerHTML = `<div class="${type}">${message}</div>`;
+      setTimeout(() => {
+        status.innerHTML = '';
+      }, 5000);
+    }
+
+    function showLoading() {
+      const mailbox = document.getElementById('mailbox');
+      mailbox.innerHTML = '<div class="loading">⏳ 載入中...</div>';
+    }
+
+    function loadInbox() {
+      const user = document.getElementById("playerName").value.trim();
+      if (!user) {
+        showStatus("請輸入玩家名稱", "error");
+        return;
+      }
+
+      // 記住玩家名稱到 localStorage
+      localStorage.setItem('rememberedPlayer', user);
+
+      showLoading();
+
+      // 如果是測試模式，使用模擬資料
+      if (isTestMode) {
+        setTimeout(() => {
+          const mockData = [
+            {
+              title: "歡迎訊息",
+              content: "歡迎來到遊戲！這是您的第一封訊息。",
+              read: "否",
+              time: "2024-01-01 12:00:00",
+              cardId: "TEST_CARD_001",
+              index: 1
+            },
+            {
+              title: "系統通知",
+              content: "系統維護通知：今晚將進行系統維護。",
+              read: "是",
+              time: "2024-01-01 10:00:00",
+              index: 2
+            },
+            {
+              title: "獎勵通知",
+              content: "恭喜您完成任務！獲得獎勵卡片一張。",
+              read: "否",
+              time: "2024-01-01 09:30:00",
+              cardId: "REWARD_CARD_002",
+              index: 3
+            }
+          ];
+          
+          displayMessages(mockData);
+          showStatus("測試模式：使用模擬資料", "demo-mode");
+        }, 1000);
+        return;
+      }
+
+      // 實際模式：使用 JSONP 避免 CORS 問題
+      const script = document.createElement('script');
+      const callbackName = 'callback_' + Date.now();
+      
+      // 建立全域回調函數
+      window[callbackName] = function(data) {
+        // 如果信箱是空的，自動新增玩家
+        if (!Array.isArray(data) || data.length === 0) {
+          showStatus("📝 首次使用！正在為您建立玩家帳號...", "info");
+          addNewPlayer();
+          return;
+        }
+        
+        // 如果已有訊息，表示玩家已存在，直接顯示
+        displayMessages(data);
+        showStatus(`✅ 歡迎回來，${user}！`, "success");
+        
+        // 清理全域回調函數
+        delete window[callbackName];
+        document.head.removeChild(script);
+      };
+      
+      // 設定錯誤處理
+      script.onerror = function() {
+        showStatus("載入失敗，請稍後再試", "error");
+        document.getElementById('mailbox').innerHTML = `
+          <div class="error">
+            <h3>❌ 載入失敗</h3>
+            <p>無法連接到伺服器，請檢查網路連線或稍後再試</p>
+          </div>`;
+        delete window[callbackName];
+        if (document.head.contains(script)) {
+          document.head.removeChild(script);
+        }
+      };
+      
+      script.src = `${API}?action=getInbox&user=${encodeURIComponent(user)}&callback=${callbackName}`;
+      document.head.appendChild(script);
+    }
+
+    function displayMessages(data) {
+      const mailbox = document.getElementById("mailbox");
+      
+      if (!Array.isArray(data) || data.length === 0) {
+        mailbox.innerHTML = `
+          <div class="empty-message">
+            <h3>📭 信箱是空的</h3>
+            <p>目前沒有新的訊息</p>
+          </div>`;
+        return;
+      }
+
+      // 對訊息進行排序：未讀的訊息排在前面，然後按時間排序
+      const sortedData = data.sort((a, b) => {
+        // 首先按讀取狀態排序：未讀的在前
+        if (a.read === '否' && b.read === '是') return -1;
+        if (a.read === '是' && b.read === '否') return 1;
+        
+        // 如果讀取狀態相同，按時間排序（新的在前）
+        const timeA = new Date(a.time || '1970-01-01');
+        const timeB = new Date(b.time || '1970-01-01');
+        return timeB - timeA;
+      });
+
+      mailbox.innerHTML = sortedData.map((msg, index) => `
+        <div class="mail ${msg.read === '是' ? 'read' : 'unread'}" 
+             onclick="markAsRead(${msg.index || index}, '${msg.cardId || ''}', this)">
+          <h3>${msg.title || '系統通知'}</h3>
+          <p>${msg.content || msg.message || '無內容'}</p>
+          ${msg.cardId && msg.read === "否" ? 
+            `<button class="claim-btn" onclick="claimReward('${msg.cardId}', ${msg.index || index}, event)">
+              🎁 領取卡片
+            </button>` : ""}
+          ${msg.read === "是" ? "<small>✅ 已讀</small>" : "<small>🆕 未讀</small>"}
+          <br><small>🕓 ${msg.time || '未知時間'}</small>
+        </div>
+      `).join("");
+    }
+
+    function markAsRead(rowIndex, cardId, element) {
+      // 如果已經已讀，不需要重複標記
+      if (element.classList.contains('read')) {
+        return;
+      }
+
+      // 防止事件冒泡（當點擊按鈕時）
+      if (event && event.target.tagName === 'BUTTON') {
+        return;
+      }
+
+      // 加入點擊動畫
+      element.classList.add('clicked');
+      setTimeout(() => {
+        element.classList.remove('clicked');
+      }, 300);
+
+      showStatus("正在標記為已讀...", "info");
+
+      if (isTestMode) {
+        // 測試模式：模擬標記已讀
+        setTimeout(() => {
+          element.classList.remove('unread');
+          element.classList.add('read');
+          element.querySelector('small').innerHTML = "✅ 已讀";
+          showStatus("✅ 已標記為已讀", "success");
+        }, 500);
+        return;
+      }
+
+      // 實際模式：使用 JSONP
+      const script = document.createElement('script');
+      const callbackName = 'markReadCallback_' + Date.now();
+      
+      window[callbackName] = function(data) {
+        if (data.success) {
+          // 更新 UI
+          element.classList.remove('unread');
+          element.classList.add('read');
+          element.querySelector('small').innerHTML = "✅ 已讀";
+          showStatus("✅ 已標記為已讀", "success");
+        } else {
+          showStatus("標記失敗，請稍後再試", "error");
+        }
+        delete window[callbackName];
+        document.head.removeChild(script);
+      };
+      
+      script.onerror = function() {
+        showStatus("標記失敗，請稍後再試", "error");
+        delete window[callbackName];
+        if (document.head.contains(script)) {
+          document.head.removeChild(script);
+        }
+      };
+      
+      script.src = `${API}?action=markAsRead&index=${rowIndex}&callback=${callbackName}`;
+      document.head.appendChild(script);
+    }
+
+    function claimReward(cardId, rowIndex, event) {
+      // 防止事件冒泡
+      if (event) {
+        event.stopPropagation();
+      }
+
+      showStatus("正在領取獎勵...", "info");
+      
+      if (isTestMode) {
+        // 測試模式：模擬領取
+        setTimeout(() => {
+          showStatus(`🎴 成功領取卡片：${cardId}！`, "success");
+          setTimeout(() => {
+            loadInbox();
+          }, 2000);
+        }, 1000);
+        return;
+      }
+      
+      // 實際模式：使用 JSONP
+      const script = document.createElement('script');
+      const callbackName = 'claimCallback_' + Date.now();
+      
+      window[callbackName] = function(data) {
+        if (data.success) {
+          showStatus(`🎴 成功領取卡片：${cardId}！`, "success");
+          setTimeout(() => {
+            loadInbox();
+          }, 2000);
+        } else {
+          showStatus("領取失敗，請稍後再試", "error");
+        }
+        delete window[callbackName];
+        document.head.removeChild(script);
+      };
+      
+      script.onerror = function() {
+        showStatus("領取失敗，請稍後再試", "error");
+        delete window[callbackName];
+        if (document.head.contains(script)) {
+          document.head.removeChild(script);
+        }
+      };
+      
+      script.src = `${API}?action=markAsRead&index=${rowIndex}&callback=${callbackName}`;
+      document.head.appendChild(script);
+    }
+
+    function generateRandomName() {
+      const names = ['小明', '小華', '小美', '小強', '小芳', '小偉', '小玲', '小傑', '小婷', '小豪',
+                    'Alex', 'Emma', 'John', 'Sarah', 'Mike', 'Lisa', 'David', 'Anna', 'Tom', 'Mary',
+                    'DragonSlayer', 'ShadowHunter', 'FireMage', 'IceQueen', 'ThunderLord', 'MoonWalker'];
+      
+      const randomName = names[Math.floor(Math.random() * names.length)];
+      
+      document.getElementById('playerName').value = randomName;
+      showStatus(`已生成隨機名稱：${randomName}，正在檢查是否可用...`, "success");
+      
+      // 自動檢查並新增玩家
+      setTimeout(() => {
+        addNewPlayer();
+      }, 1000);
+    }
+
+    function addNewPlayer() {
+      const playerName = document.getElementById('playerName').value.trim();
+      
+      if (!playerName) {
+        showStatus("請先輸入玩家名稱", "error");
+        return;
+      }
+
+      // 記住玩家名稱到 localStorage
+      localStorage.setItem('rememberedPlayer', playerName);
+
+      showStatus("正在檢查玩家是否已存在...", "info");
+
+      if (isTestMode) {
+        // 測試模式：模擬檢查和新增
+        setTimeout(() => {
+          // 模擬檢查結果（假設名稱不重複）
+          showStatus(`✅ 測試模式：玩家 ${playerName} 已新增到系統`, "success");
+          setTimeout(() => {
+            loadInbox();
+          }, 2000);
+        }, 1000);
+        return;
+      }
+
+      // 實際模式：先檢查玩家是否已存在
+      const checkScript = document.createElement('script');
+      const checkCallbackName = 'checkPlayerCallback_' + Date.now();
+      
+      window[checkCallbackName] = function(data) {
+        // 如果玩家已存在（有訊息），顯示錯誤
+        if (Array.isArray(data) && data.length > 0) {
+          showStatus(`❌ 玩家名稱「${playerName}」已存在，請使用其他名稱`, "error");
+          delete window[checkCallbackName];
+          document.head.removeChild(checkScript);
+          return;
+        }
+        
+        // 如果玩家不存在，則新增玩家
+        showStatus("正在新增玩家到系統...", "info");
+        
+        const addScript = document.createElement('script');
+        const addCallbackName = 'addPlayerCallback_' + Date.now();
+        
+        window[addCallbackName] = function(addData) {
+          if (addData.success) {
+            showStatus(`✅ 玩家 ${playerName} 已成功新增到系統！`, "success");
+            
+            // 記錄註冊的帳號到 localStorage
+            const registeredAccounts = localStorage.getItem('registeredAccounts');
+            let accounts = registeredAccounts ? JSON.parse(registeredAccounts) : [];
+            if (!accounts.includes(playerName)) {
+              accounts.push(playerName);
+              localStorage.setItem('registeredAccounts', JSON.stringify(accounts));
+            }
+            
+            // 發送邀請碼訊息
+            setTimeout(() => {
+              sendInviteCode(playerName);
+            }, 1000);
+            
+            setTimeout(() => {
+              loadInbox();
+            }, 3000);
+          } else {
+            showStatus(`❌ 新增失敗：${addData.error || '未知錯誤'}`, "error");
+          }
+          delete window[addCallbackName];
+          document.head.removeChild(addScript);
+        };
+        
+        addScript.onerror = function() {
+          showStatus("新增玩家失敗，請稍後再試", "error");
+          delete window[addCallbackName];
+          if (document.head.contains(addScript)) {
+            document.head.removeChild(addScript);
+          }
+        };
+        
+        // 發送歡迎訊息來新增玩家
+        addScript.src = `${API}?action=sendMessage&to=${encodeURIComponent(playerName)}&title=歡迎來到遊戲！&content=親愛的 ${playerName}，歡迎來到我們的遊戲世界！這裡是您的個人信箱，您可以在這裡收到系統通知、任務獎勵、活動訊息和卡片獎勵。作為新玩家，您還將收到一份特別的歡迎禮包！祝您遊戲愉快！&cardId=WELCOME_CARD_001&callback=${addCallbackName}`;
+        document.head.appendChild(addScript);
+        
+        delete window[checkCallbackName];
+        document.head.removeChild(checkScript);
+      };
+      
+      checkScript.onerror = function() {
+        showStatus("檢查玩家失敗，請稍後再試", "error");
+        delete window[checkCallbackName];
+        if (document.head.contains(checkScript)) {
+          document.head.removeChild(checkScript);
+        }
+      };
+      
+      // 先檢查玩家是否存在
+      checkScript.src = `${API}?action=getInbox&user=${encodeURIComponent(playerName)}&callback=${checkCallbackName}`;
+      document.head.appendChild(checkScript);
+    }
+
+    // 背景音樂控制
+    let backgroundMusic = null;
+    let isMusicPlaying = false;
+
+    // 初始化背景音樂
+    function initBackgroundMusic() {
+      console.log('🎵 初始化背景音樂...');
+      
+      backgroundMusic = document.getElementById('backgroundMusic');
+      
+      if (!backgroundMusic) {
+        console.error('❌ 找不到背景音樂元素');
+        return;
+      }
+
+      // 設置音樂屬性
+      backgroundMusic.volume = 0.3;
+      backgroundMusic.loop = true;
+
+      // 預載入音樂
+      backgroundMusic.load();
+
+      // 從localStorage讀取音樂狀態
+      const musicState = localStorage.getItem('bgMusicState');
+      if (musicState === 'playing') {
+        playBackgroundMusic();
+      }
+
+      console.log('✅ 背景音樂初始化完成');
+    }
+
+    // 播放背景音樂
+    function playBackgroundMusic() {
+      if (!backgroundMusic) return;
+      
+      if (backgroundMusic.paused) {
+        backgroundMusic.play().then(() => {
+          isMusicPlaying = true;
+          localStorage.setItem('bgMusicState', 'playing');
+          updateMusicButton();
+          console.log('🎵 背景音樂開始播放');
+        }).catch(err => {
+          console.error('❌ 背景音樂播放失敗:', err);
+        });
+      }
+    }
+
+    // 暫停背景音樂
+    function pauseBackgroundMusic() {
+      if (!backgroundMusic) return;
+      
+      backgroundMusic.pause();
+      isMusicPlaying = false;
+      localStorage.setItem('bgMusicState', 'paused');
+      updateMusicButton();
+      console.log('⏸️ 背景音樂已暫停');
+    }
+
+    // 切換背景音樂播放狀態
+    function toggleBackgroundMusic() {
+      if (isMusicPlaying) {
+        pauseBackgroundMusic();
+      } else {
+        playBackgroundMusic();
+      }
+    }
+
+    // 更新音樂按鈕狀態
+    function updateMusicButton() {
+      const musicBtn = document.getElementById('toggleMusic');
+      if (musicBtn) {
+        if (isMusicPlaying) {
+          musicBtn.textContent = '🔊';
+          musicBtn.style.background = 'rgba(0,0,0,0.8)';
+          musicBtn.classList.add('playing');
+        } else {
+          musicBtn.textContent = '🔇';
+          musicBtn.style.background = 'rgba(0,0,0,0.6)';
+          musicBtn.classList.remove('playing');
+        }
+      }
+    }
+
+    // 設置音樂音量
+    function setMusicVolume(volume) {
+      if (backgroundMusic) {
+        backgroundMusic.volume = volume;
+        localStorage.setItem('musicVolume', volume.toString());
+      }
+    }
+
+    // 發送邀請碼給新玩家
+    function sendInviteCode(playerName) {
+      if (isTestMode) {
+        // 測試模式：模擬發送邀請碼
+        showStatus("🎁 測試模式：邀請碼 GOLD100A 已發送到您的信箱", "success");
+        return;
+      }
+
+      // 實際模式：發送邀請碼訊息
+      const script = document.createElement('script');
+      const callbackName = 'inviteCodeCallback_' + Date.now();
+      
+      window[callbackName] = function(data) {
+        if (data.success) {
+          showStatus("🎁 邀請碼 GOLD100A 已發送到您的信箱！", "success");
+        } else {
+          showStatus("邀請碼發送失敗，請稍後再試", "error");
+        }
+        delete window[callbackName];
+        document.head.removeChild(script);
+      };
+      
+      script.onerror = function() {
+        showStatus("邀請碼發送失敗，請稍後再試", "error");
+        delete window[callbackName];
+        if (document.head.contains(script)) {
+          document.head.removeChild(script);
+        }
+      };
+      
+      // 發送邀請碼訊息
+      script.src = `${API}?action=sendMessage&to=${encodeURIComponent(playerName)}&title=🎁 歡迎禮包 - 邀請碼&content=恭喜您成為新玩家！您的專屬邀請碼是：GOLD100A。&cardId=INVITE_CODE_GOLD100A&callback=${callbackName}`;
+      document.head.appendChild(script);
+    }
+
+    // 清除記憶的帳號
+    function clearRememberedAccount() {
+      const rememberedPlayer = localStorage.getItem('rememberedPlayer');
+      if (rememberedPlayer) {
+        localStorage.removeItem('rememberedPlayer');
+        document.getElementById('playerName').value = '';
+        showStatus(`已清除記憶的帳號：${rememberedPlayer}`, "success");
+      } else {
+        showStatus("目前沒有記憶的帳號", "info");
+      }
+      
+      // 同時清除註冊帳號記錄
+      localStorage.removeItem('registeredAccounts');
+      
+      // 重新啟用輸入框和按鈕
+      document.getElementById('playerName').disabled = false;
+      document.querySelector('button[onclick="loadInbox()"]').disabled = false;
+      document.querySelector('button[onclick="generateRandomName()"]').disabled = false;
+      document.querySelector('button[onclick="addNewPlayer()"]').disabled = false;
+      
+      // 清空信箱顯示
+      document.getElementById('mailbox').innerHTML = '';
+      
+      showStatus("已清除所有帳號記錄，可以重新註冊", "success");
+    }
+
+    // 按 Enter 鍵載入信箱
+    document.getElementById('playerName').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        loadInbox();
+      }
+    });
+
+    // 檢查是否已有註冊的帳號
+    function checkExistingAccount() {
+      const registeredAccounts = localStorage.getItem('registeredAccounts');
+      if (registeredAccounts) {
+        const accounts = JSON.parse(registeredAccounts);
+        if (accounts.length > 0) {
+          // 如果已有帳號，禁用輸入框和按鈕
+          document.getElementById('playerName').disabled = true;
+          document.querySelector('button[onclick="loadInbox()"]').disabled = true;
+          document.querySelector('button[onclick="generateRandomName()"]').disabled = true;
+          document.querySelector('button[onclick="addNewPlayer()"]').disabled = true;
+          
+          showStatus("⚠️ 此電腦已有註冊帳號，無法新增其他帳號", "error");
+          
+          // 顯示已註冊的帳號
+          const accountList = accounts.join(', ');
+          document.getElementById('mailbox').innerHTML = `
+            <div style="background: #fff3cd; border: 1px solid #ffeaa7; border-radius: 10px; padding: 20px; margin: 15px 0; color: #856404;">
+              <h3>⚠️ 帳號限制</h3>
+              <p>此電腦已有註冊帳號：<strong>${accountList}</strong></p>
+              <p>為確保遊戲公平性，每台電腦只能註冊一個帳號。</p>
+              <p>如需切換帳號，請先清除記憶的帳號。</p>
+            </div>
+          `;
+        }
+      }
+    }
+
+    // 頁面載入時的歡迎訊息
+    window.addEventListener('load', function() {
+      // 初始化背景音樂
+      initBackgroundMusic();
+      
+      // 檢查是否有記住的玩家名稱
+      const rememberedPlayer = localStorage.getItem('rememberedPlayer');
+      if (rememberedPlayer) {
+        document.getElementById('playerName').value = rememberedPlayer;
+        showStatus(`歡迎回來，${rememberedPlayer}！已自動填入您的帳號`, "success");
+        
+        // 自動載入信箱
+        setTimeout(() => {
+          loadInbox();
+        }, 1000);
+      } else {
+        if (isTestMode) {
+          showStatus("測試模式已啟用，使用模擬資料", "demo-mode");
+        } else {
+          showStatus("歡迎使用玩家信箱！請輸入您的玩家名稱或使用名稱生成器", "success");
+        }
+      }
+      
+      // 檢查是否已有註冊的帳號
+      checkExistingAccount();
+    });
+
+    // 添加音樂按鈕事件監聽器
+    document.addEventListener('DOMContentLoaded', function() {
+      const musicBtn = document.getElementById('toggleMusic');
+      if (musicBtn) {
+        musicBtn.addEventListener('click', toggleBackgroundMusic);
+        
+        // 添加懸停效果
+        musicBtn.addEventListener('mouseenter', () => {
+          musicBtn.style.transform = 'scale(1.1)';
+          musicBtn.style.background = 'rgba(0,0,0,0.8)';
+        });
+
+        musicBtn.addEventListener('mouseleave', () => {
+          musicBtn.style.transform = 'scale(1)';
+          musicBtn.style.background = isMusicPlaying ? 'rgba(0,0,0,0.8)' : 'rgba(0,0,0,0.6)';
+        });
+      }
+    });
+
+    // 頁面可見性變化時處理音樂播放
+    document.addEventListener('visibilitychange', function() {
+      if (document.hidden) {
+        // 頁面隱藏時暫停音樂
+        if (isMusicPlaying && backgroundMusic && !backgroundMusic.paused) {
+          backgroundMusic.pause();
+        }
+      } else {
+        // 頁面顯示時恢復音樂
+        if (isMusicPlaying && backgroundMusic && backgroundMusic.paused) {
+          backgroundMusic.play().catch(err => {
+            console.log('恢復音樂播放失敗:', err);
+          });
+        }
+      }
+    });
+  </script>
+</body>
+</html>
