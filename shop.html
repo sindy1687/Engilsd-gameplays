@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌟 商城 - Typing Hero</title>
+  <link rel="stylesheet" href="responsive_enhanced.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Orbitron', 'Microsoft JhengHei', sans-serif;
+      background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0a0e27 100%);
+      color: #fff;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* 星空背景動畫 */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+        radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+        radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent),
+        radial-gradient(2px 2px at 160px 30px, #ddd, transparent);
+      background-repeat: repeat;
+      background-size: 200px 100px;
+      animation: stars 20s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes stars {
+      from { transform: translateY(0); }
+      to { transform: translateY(-100px); }
+    }
+
+    /* 頭部樣式 */
+    header {
+      background: rgba(10, 20, 40, 0.9);
+      border-bottom: 3px solid #00ffff;
+      padding: 30px 20px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      position: relative;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+      position: relative;
+      margin-top: 10px;
+    }
+
+    header h1 {
+      color: #00ffff;
+      font-size: 2.5rem;
+      text-shadow: 0 0 20px #00ffff;
+      margin: 0;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .header-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .stars-display {
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 20px;
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 170, 0, 0.2));
+      border: 2px solid #ffd700;
+      border-radius: 15px;
+      font-size: 1.3rem;
+      color: #ffd700;
+      font-weight: bold;
+      text-shadow: 0 0 10px #ffd700;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+      white-space: nowrap;
+      min-width: fit-content;
+      margin: 0 auto;
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #00ffff 0%, #a259ff 100%);
+      color: #000;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(0, 255, 255, 0.5);
+    }
+
+    /* 主要內容區域 */
+    .main-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    /* 商城分類標籤 */
+    .shop-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      background: rgba(10, 20, 40, 0.8);
+      border: 2px solid #00ffff;
+      color: #00ffff;
+      padding: 12px 24px;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+
+    .tab-btn.active {
+      background: linear-gradient(135deg, #00ffff 0%, #a259ff 100%);
+      color: #000;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    }
+
+    .tab-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* 商品網格 */
+    .shop-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-bottom: 30px;
+    }
+
+    /* 商品卡片 */
+    .shop-item {
+      background: rgba(10, 20, 40, 0.85);
+      border: 2px solid #00ffff;
+      border-radius: 20px;
+      padding: 25px;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    .shop-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+      transition: left 0.5s;
+    }
+
+    .shop-item:hover::before {
+      left: 100%;
+    }
+
+    .shop-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
+      border-color: #ffd700;
+    }
+
+    .shop-item.ssr {
+      border-color: #ffd700;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    }
+
+    .shop-item.ssr:hover {
+      box-shadow: 0 10px 30px rgba(255, 215, 0, 0.5);
+    }
+
+    .item-icon {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    .item-title {
+      font-size: 1.4rem;
+      color: #00ffff;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .item-description {
+      color: #ccc;
+      margin-bottom: 20px;
+      line-height: 1.5;
+      font-size: 0.95rem;
+    }
+
+    .item-price {
+      font-size: 1.3rem;
+      color: #ffd700;
+      font-weight: bold;
+      margin-bottom: 15px;
+      text-shadow: 0 0 10px #ffd700;
+    }
+
+    .item-button {
+      background: linear-gradient(135deg, #ffd700 0%, #ffaa00 100%);
+      color: #000;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    }
+
+    .item-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(255, 215, 0, 0.5);
+    }
+
+    .item-button:disabled {
+      background: #666;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    /* SSR卡片特殊樣式 */
+    .ssr-card-preview {
+      width: 120px;
+      height: 160px;
+      margin: 0 auto 15px;
+      background: linear-gradient(135deg, #ffd700 0%, #ffaa00 100%);
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: #000;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+      position: relative;
+    }
+
+    .ssr-card-preview::after {
+      content: 'SSR';
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: #ffd700;
+      color: #000;
+      padding: 2px 6px;
+      border-radius: 8px;
+      font-size: 0.7rem;
+      font-weight: bold;
+    }
+
+    /* 購買星星套餐 */
+    .star-package {
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 170, 0, 0.1) 100%);
+      border-color: #ffd700;
+    }
+
+    .star-package .item-icon {
+      color: #ffd700;
+    }
+
+    .star-package .item-title {
+      color: #ffd700;
+    }
+
+    /* 確認購買彈窗 */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+      backdrop-filter: blur(5px);
+    }
+
+    .modal-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(135deg, rgba(10, 20, 40, 0.95), rgba(20, 40, 80, 0.95));
+      border: 3px solid #00ffff;
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+    }
+
+    .modal-title {
+      color: #00ffff;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .modal-description {
+      color: #ccc;
+      margin-bottom: 25px;
+      line-height: 1.5;
+    }
+
+    .modal-buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .modal-btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .modal-btn.confirm {
+      background: linear-gradient(135deg, #00ff00 0%, #00cc00 100%);
+      color: #000;
+    }
+
+    .modal-btn.cancel {
+      background: linear-gradient(135deg, #ff6b6b 0%, #cc0000 100%);
+      color: #fff;
+    }
+
+    .modal-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* 響應式設計 */
+    @media (max-width: 768px) {
+      .header-top {
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 30px;
+        position: relative;
+      }
+
+      header h1 {
+        font-size: 2rem;
+        position: static;
+        transform: none;
+        left: auto;
+      }
+
+      .shop-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .shop-tabs {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .tab-btn {
+        width: 200px;
+      }
+
+      .header-actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        margin-bottom: 15px;
+      }
+      .stars-display {
+        margin: 0 auto;
+      }
+      .btn {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+      }
+    }
+
+    /* 動畫效果 */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    .shop-item {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .shop-item:nth-child(2) {
+      animation-delay: 0.5s;
+    }
+
+    .shop-item:nth-child(3) {
+      animation-delay: 1s;
+    }
+
+    .shop-item:nth-child(4) {
+      animation-delay: 1.5s;
+    }
+
+    /* 抽取輪盤動畫 */
+    .gacha-wheel {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 2000;
+      backdrop-filter: blur(10px);
+    }
+
+    .wheel-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .wheel {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: conic-gradient(
+        from 0deg,
+        #ffd700 0deg 45deg,
+        #ff6b6b 45deg 90deg,
+        #a259ff 90deg 135deg,
+        #00ffff 135deg 180deg,
+        #ffd700 180deg 225deg,
+        #ff6b6b 225deg 270deg,
+        #a259ff 270deg 315deg,
+        #00ffff 315deg 360deg
+      );
+      position: relative;
+      animation: wheelSpin 3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+      box-shadow: 0 0 50px rgba(255, 215, 0, 0.5);
+    }
+
+    @keyframes wheelSpin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(1440deg); }
+    }
+
+    .wheel-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      background: #000;
+      border-radius: 50%;
+      border: 3px solid #ffd700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: #ffd700;
+      font-weight: bold;
+    }
+
+    .wheel-pointer {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-top: 30px solid #ffd700;
+      z-index: 10;
+    }
+
+    .gacha-result {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(135deg, rgba(10, 20, 40, 0.95), rgba(20, 40, 80, 0.95));
+      border: 3px solid #ffd700;
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+      animation: resultPop 0.5s ease-out;
+    }
+
+    @keyframes resultPop {
+      0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
+      100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    }
+
+    .result-icon {
+      font-size: 4rem;
+      margin-bottom: 15px;
+    }
+
+    .result-title {
+      font-size: 1.5rem;
+      color: #ffd700;
+      margin-bottom: 10px;
+    }
+
+    .result-description {
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+
+    .result-button {
+      background: linear-gradient(135deg, #00ffff 0%, #a259ff 100%);
+      color: #000;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .result-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(0, 255, 255, 0.5);
+    }
+
+    /* 抽取按鈕樣式 */
+    .gacha-btn {
+      background: linear-gradient(135deg, #ffd700 0%, #ffaa00 100%);
+      color: #000;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    }
+
+    .gacha-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(255, 215, 0, 0.5);
+    }
+
+    .gacha-btn:disabled {
+      background: #666;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    /* 限定卡片樣式 */
+    .season-title {
+      grid-column: 1 / -1;
+      text-align: center;
+      margin-bottom: 30px;
+      padding: 20px;
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 165, 0, 0.1));
+      border-radius: 15px;
+      border: 2px solid #FFD700;
+    }
+
+    .season-title h2 {
+      color: #FFD700;
+      font-size: 2rem;
+      margin: 0 0 10px 0;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    }
+
+    .season-title p {
+      color: #ccc;
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .shop-item.limited {
+      position: relative;
+      overflow: hidden;
+      border: 3px solid;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+      animation: limitedCardFloat 4s ease-in-out infinite;
+    }
+
+    .shop-item.limited::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+      animation: shimmer 3s infinite;
+      pointer-events: none;
+    }
+
+    @keyframes limitedCardFloat {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      25% { transform: translateY(-8px) rotate(1deg); }
+      50% { transform: translateY(-12px) rotate(0deg); }
+      75% { transform: translateY(-8px) rotate(-1deg); }
+    }
+
+    @keyframes shimmer {
+      0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+      100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    }
+
+    .limited-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 1.5rem;
+      z-index: 10;
+      filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.8));
+      animation: badgePulse 2s ease-in-out infinite;
+    }
+
+    @keyframes badgePulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .limited-time {
+      color: #FF6B6B;
+      font-size: 0.9rem;
+      font-weight: bold;
+      margin: 5px 0;
+      text-align: center;
+      background: rgba(255, 107, 107, 0.1);
+      padding: 5px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 107, 107, 0.3);
+      animation: timePulse 3s ease-in-out infinite;
+    }
+
+    @keyframes timePulse {
+      0%, 100% { box-shadow: 0 0 5px rgba(255, 107, 107, 0.3); }
+      50% { box-shadow: 0 0 15px rgba(255, 107, 107, 0.6); }
+    }
+
+    .shop-item.limited .ssr-card-preview {
+      animation: cardGlow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes cardGlow {
+      0% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
+      100% { box-shadow: 0 0 30px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 215, 0, 0.3); }
+    }
+
+    .shop-item.limited.expired {
+      opacity: 0.6;
+      filter: grayscale(0.5);
+      animation: none;
+    }
+
+    .shop-item.limited.expired::before {
+      animation: none;
+    }
+
+    .shop-item.limited.expired .limited-badge {
+      animation: none;
+    }
+
+    .shop-item.limited.expired .limited-time {
+      animation: none;
+      color: #999;
+    }
+
+    .shop-item.limited.expired .ssr-card-preview {
+      animation: none;
+    }
+
+    .other-seasons-preview {
+      grid-column: 1 / -1;
+      margin-top: 40px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .other-seasons-preview h3 {
+      color: #ccc;
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 1.3rem;
+    }
+
+    .seasons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .season-preview {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .season-preview:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+    }
+
+    .season-icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .season-name {
+      color: #ccc;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .season-cards-count {
+      color: #999;
+      font-size: 0.9rem;
+    }
+
+    /* 邀請碼兌換樣式 */
+    .invite-code-section {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .invite-code-section h3 {
+      color: #333;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .invite-code-section p {
+      color: #666;
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    .invite-input-group {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .invite-input-group input {
+      padding: 15px 20px;
+      font-size: 1.2rem;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      width: 200px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: bold;
+    }
+
+    .invite-input-group input:focus {
+      outline: none;
+      border-color: #4CAF50;
+      box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+    }
+
+    .invite-btn {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      background: linear-gradient(135deg, #4CAF50, #45a049);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .invite-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+    }
+
+    .invite-btn:active {
+      transform: translateY(0);
+    }
+
+    .invite-info {
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      border-left: 4px solid #4CAF50;
+    }
+
+    .invite-info p {
+      margin: 5px 0;
+      color: #555;
+      font-size: 1rem;
+    }
+
+    /* 成功/錯誤狀態 */
+    .invite-input-group.success input {
+      border-color: #4CAF50;
+      background-color: #f0f8f0;
+    }
+
+    .invite-input-group.error input {
+      border-color: #f44336;
+      background-color: #fff5f5;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <h1>🌟 商城</h1>
+      <span id="totalStarsCount" class="stars-display">0</span>
+    </div>
+    <div class="header-actions">
+      <button class="btn" onclick="location.href='cards.html'">📁 卡片倉庫</button>
+      <button class="btn" onclick="location.href='gacha.html'">🎰 抽卡</button>
+      <button class="btn" onclick="location.href='mailbox.html'">📬 信箱</button>
+      <button class="btn" onclick="location.href='index.html'">🏠 首頁</button>
+    </div>
+  </header>
+
+  <div class="main-content">
+    <!-- 商城分類標籤 -->
+    <div class="shop-tabs">
+      <button class="tab-btn active" onclick="switchTab('invite')">🎫 邀請碼兌換</button>
+    </div>
+
+    <!-- 邀請碼兌換 -->
+    <div id="invite-shop" class="shop-section">
+      <div class="invite-code-section">
+        <h3>🎫 邀請碼兌換</h3>
+        <p>輸入邀請碼即可獲得對應數量的星星！</p>
+        <div class="invite-input-group">
+          <input type="text" id="inviteCodeInput" placeholder="請輸入邀請碼" maxlength="9">
+          <button class="invite-btn" onclick="ShopSystem.redeemInviteCode()">兌換</button>
+        </div>
+        <div class="invite-info">
+          <p>💡 邀請碼格式：7-9位英數字組合</p>
+          <p>🎁 可兌換星星數量：100、300、500、1000、5000、10000顆</p>
+          <p id="usedCodesInfo">📊 已使用邀請碼：0 個</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 載入必要的JavaScript -->
+  <script src="js/sound.js"></script>
+  <script src="js/userData.js"></script>
+  <script src="js/starRewardSystem.js"></script>
+  <script src="js/cardUtils.js"></script>
+  <script src="js/cards.js"></script>
+  <script src="js/achievementSystem.js"></script>
+
+  <script>
+    // 商城系統
+    const ShopSystem = {
+      currentTab: 'invite',
+
+      // 初始化商城系統
+      init() {
+        console.log('商城系統初始化中...');
+        
+        this.updateStarsDisplay();
+        this.loadInviteCodes();
+        this.setupEventListeners();
+        
+        // 延遲更新統計信息，等待邀請碼載入完成
+        setTimeout(() => {
+          this.updateUsedCodesInfo();
+        }, 1000);
+        
+        console.log('商城系統初始化完成');
+      },
+
+      // 更新星星顯示
+      updateStarsDisplay() {
+        const starsCount = document.getElementById('totalStarsCount');
+        const currentStars = parseInt(localStorage.getItem('totalStars') || '0');
+        starsCount.textContent = `⭐ ${currentStars}`;
+      },
+
+      // 更新已使用邀請碼統計
+      updateUsedCodesInfo() {
+        const usedCodesInfo = document.getElementById('usedCodesInfo');
+        const usedInviteCodes = JSON.parse(localStorage.getItem('usedInviteCodes') || '[]');
+        const totalCodes = this.inviteCodes.length;
+        const usedCount = usedInviteCodes.length;
+        
+        usedCodesInfo.textContent = `📊 已使用邀請碼：${usedCount} 個 / 總計 ${totalCodes} 個`;
+      },
+
+      // 切換標籤
+      switchTab(tab) {
+        // 目前只有邀請碼兌換，所以不需要切換邏輯
+        if (tab === 'invite') {
+          // 邀請碼兌換頁面不需要額外渲染
+        }
+      },
+
+      // 加載邀請碼
+      loadInviteCodes() {
+        // 嘗試載入邀請碼資料
+        fetch('js/inviteCodes.json')
+          .then(response => response.json())
+          .then(data => {
+            this.inviteCodes = data.codes;
+            console.log(`✅ 成功載入 ${data.codes.length} 組邀請碼`);
+            
+            // 載入完成後，檢查本地已使用的邀請碼並同步狀態
+            this.syncLocalUsedCodes();
+          })
+          .catch(error => {
+            console.error('❌ 載入邀請碼失敗:', error);
+            this.inviteCodes = [];
+          });
+      },
+
+      // 同步本地已使用的邀請碼狀態
+      syncLocalUsedCodes() {
+        const usedInviteCodes = JSON.parse(localStorage.getItem('usedInviteCodes') || '[]');
+        
+        // 將本地已使用的邀請碼標記為已使用
+        this.inviteCodes.forEach(code => {
+          const isUsed = usedInviteCodes.find(used => used.code === code.code);
+          if (isUsed) {
+            code.used = true;
+            code.usedAt = isUsed.usedAt || new Date().toISOString();
+            code.usedBy = isUsed.usedBy || 'user';
+          }
+        });
+        
+        console.log(`🔄 同步了 ${usedInviteCodes.length} 個已使用的邀請碼狀態`);
+      },
+
+      // 兌換邀請碼
+      redeemInviteCode() {
+        const codeInput = document.getElementById('inviteCodeInput');
+        const code = codeInput.value.trim().toUpperCase();
+        
+        if (!code) {
+          this.showNotification('請輸入邀請碼', 'error');
+          this.setInputStatus('error');
+          return;
+        }
+
+        if (code.length < 7 || code.length > 9) {
+          this.showNotification('邀請碼格式錯誤，應為7-9位英數字', 'error');
+          this.setInputStatus('error');
+          return;
+        }
+
+        // 檢查邀請碼是否存在
+        const inviteCode = this.inviteCodes.find(c => c.code === code);
+        
+        if (!inviteCode) {
+          this.showNotification('邀請碼不存在', 'error');
+          this.setInputStatus('error');
+          return;
+        }
+
+        // 檢查邀請碼是否已被使用（雙重檢查）
+        // 1. 檢查本地已兌換紀錄
+        const usedInviteCodes = JSON.parse(localStorage.getItem('usedInviteCodes') || '[]');
+        const alreadyUsed = usedInviteCodes.find(c => c.code === code);
+        
+        // 2. 檢查邀請碼本身的狀態
+        if (inviteCode.used || alreadyUsed) {
+          this.showNotification('此邀請碼已被使用，無法重複兌換', 'error');
+          this.setInputStatus('error');
+          return;
+        }
+
+        // 兌換成功
+        this.confirmInviteCodeRedeem(inviteCode);
+      },
+
+      // 確認兌換邀請碼
+      confirmInviteCodeRedeem(inviteCode) {
+        const { code, stars } = inviteCode;
+        
+        // 標記為已使用
+        inviteCode.used = true;
+        inviteCode.usedAt = new Date().toISOString();
+        inviteCode.usedBy = 'user'; // 可以加入用戶ID
+
+        // 增加星星
+        const currentStars = parseInt(localStorage.getItem('totalStars') || '0');
+        localStorage.setItem('totalStars', (currentStars + stars).toString());
+
+        // 儲存已使用的邀請碼記錄
+        this.saveUsedInviteCodes();
+
+        // 顯示成功訊息
+        this.showNotification(`🎉 兌換成功！獲得 ${stars} 顆星星！`, 'success');
+        this.setInputStatus('success');
+
+        // 清空輸入框
+        document.getElementById('inviteCodeInput').value = '';
+
+        // 更新顯示
+        this.updateStarsDisplay();
+        this.updateUsedCodesInfo();
+
+        // 播放音效
+        if (typeof StarRewardSystem !== 'undefined') {
+          StarRewardSystem.playStarSound();
+        }
+
+        // 3秒後清除狀態
+        setTimeout(() => {
+          this.setInputStatus('normal');
+        }, 3000);
+      },
+
+      // 設定輸入框狀態
+      setInputStatus(status) {
+        const inputGroup = document.querySelector('.invite-input-group');
+        inputGroup.className = `invite-input-group ${status}`;
+      },
+
+      // 儲存已使用的邀請碼
+      saveUsedInviteCodes() {
+        // 獲取所有已使用的邀請碼（包括本地記錄和當前標記的）
+        const usedCodes = this.inviteCodes.filter(code => code.used);
+        
+        // 同時更新邀請碼本身的狀態
+        this.inviteCodes.forEach(code => {
+          if (code.used) {
+            code.usedAt = code.usedAt || new Date().toISOString();
+            code.usedBy = code.usedBy || 'user';
+          }
+        });
+        
+        // 儲存到本地存儲
+        localStorage.setItem('usedInviteCodes', JSON.stringify(usedCodes));
+        
+        // 可選：同步到伺服器（如果有後端API）
+        this.syncUsedCodesToServer(usedCodes);
+      },
+
+      // 顯示通知
+      showNotification(message, type = 'info') {
+        const notification = document.createElement('div');
+        notification.style.cssText = `
+          position: fixed;
+          top: 20px;
+          right: 20px;
+          background: ${type === 'success' ? 'linear-gradient(135deg, #00ff00, #00cc00)' : 
+                       type === 'error' ? 'linear-gradient(135deg, #ff6b6b, #cc0000)' : 
+                       'linear-gradient(135deg, #00ffff, #a259ff)'};
+          color: ${type === 'success' || type === 'error' ? '#000' : '#fff'};
+          padding: 15px 20px;
+          border-radius: 10px;
+          font-weight: bold;
+          z-index: 1001;
+          box-shadow: 0 0 20px rgba(0,0,0,0.3);
+          animation: slideIn 0.3s ease-out;
+        `;
+        notification.textContent = message;
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+          notification.remove();
+        }, 3000);
+      },
+
+      // 同步已使用的邀請碼到伺服器（可選功能）
+      syncUsedCodesToServer(usedCodes) {
+        // 這裡可以實現與後端的同步邏輯
+        // 例如：發送 POST 請求到 API 端點
+        console.log('📤 同步已使用的邀請碼到伺服器:', usedCodes);
+        
+        // 示例：如果有後端API，可以這樣實現
+        /*
+        fetch('/api/invite-codes/used', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(usedCodes)
+        })
+        .then(response => response.json())
+        .then(data => console.log('✅ 同步成功:', data))
+        .catch(error => console.error('❌ 同步失敗:', error));
+        */
+      },
+
+      // 設置事件監聽器
+      setupEventListeners() {
+        // 邀請碼輸入框Enter鍵支援
+        document.getElementById('inviteCodeInput').addEventListener('keypress', (e) => {
+          if (e.key === 'Enter') {
+            this.redeemInviteCode();
+          }
+        });
+
+        // 添加滑入動畫樣式
+        const style = document.createElement('style');
+        style.textContent = `
+          @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+          }
+        `;
+        document.head.appendChild(style);
+      }
+    };
+    window.ShopSystem = ShopSystem; // ←加這行
+
+    // 頁面載入時初始化
+    window.addEventListener('load', function() {
+      // 直接初始化邀請碼系統，不需要等待cards.js
+      ShopSystem.init();
+    });
+
+    // 初始化點擊音效
+    if (typeof SoundSystem !== 'undefined') {
+      // 為所有按鈕添加點擊音效
+      SoundSystem.addClickSoundToElements(document.querySelectorAll('button'));
+      
+      // 為所有可點擊元素添加點擊音效
+      SoundSystem.addClickSoundToElements(document.querySelectorAll('a, .card, .avatarSlide'));
+    }
+  </script>
+</body>
+</html>
