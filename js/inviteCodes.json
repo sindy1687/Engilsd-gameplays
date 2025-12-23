@@ -1,0 +1,1502 @@
+{
+  "generatedAt": "2025-06-28T12:00:00.000Z",
+  "totalCodes": 210,
+  "codes": [
+    {
+      "code": "WELCOME",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "STAR100",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "GIFT100",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "NEW100A",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "PLAY100A",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "FUN100A",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "WIN100A",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "JOIN100A",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "LUCK100A",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "GOLD100A",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "BRONZE100",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "VIP100A",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "HAPPY100",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "SMART100",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "BRAVE100",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "HERO100A",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "MAGIC100",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "POWER100",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "SHINE100",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "DREAM100",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "HOPE100A",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "XK7M9P2",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "Q8R4T6Y",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "A3B5C7D",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "E9F1G3H",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "I4J6K8L",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "M2N5O7P",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "Q1R3S5T",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "U6V8W0X",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "Y2Z4A6B",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "C8D0E2F",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "G4H6I8J",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "K0L2M4N",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "O6P8Q0R",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "S2T4U6V",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "W8X0Y2Z",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "A4B6C8D",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "E0F2G4H",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "I6J8K0L",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "M2N4O6P",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "Q8R0S2T",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "U4V6W8X",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "Y0Z2A4B",
+      "stars": 100,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "STAR300A",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "GIFT300A",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "NEW300A",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "PLAY300A",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "FUN300A",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "WIN300A",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "JOIN300A",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "LUCK300A",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "GOLD300A",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "VIP300A",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "HAPPY300",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "SMART300",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "BRAVE300",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "HERO300A",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "MAGIC300",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "POWER300",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "SHINE300",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "DREAM300",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "HOPE300A",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "P7Q9R1S",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "T3U5V7W",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "X1Y3Z5A",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "B7C9D1E",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "F3G5H7I",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "J1K3L5M",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "N7O9P1Q",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "R3S5T7U",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "V1W3X5Y",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "Z7A9B1C",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "D3E5F7G",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "H1I3J5K",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "L7M9N1O",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "P3Q5R7S",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "T1U3V5W",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "X7Y9Z1A",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "B3C5D7E",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "F1G3H5I",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "J7K9L1M",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "N3O5P7Q",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "R1S3T5U",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "V7W9X1Y",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "Z3A5B7C",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "D1E3F5G",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "H7I9J1K",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "L3M5N7O",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "P1Q3R5S",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "T7U9V1W",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "X3Y5Z7A",
+      "stars": 300,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "STAR500A",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "GIFT500A",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "NEW500A",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "PLAY500A",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "FUN500A",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "WIN500A",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "JOIN500A",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "LUCK500A",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "GOLD500A",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "VIP500A",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "HAPPY500",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "SMART500",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "BRAVE500",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "HERO500A",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "MAGIC500",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "POWER500",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "SHINE500",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "DREAM500",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "HOPE500A",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "K8L0M2N",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "O4P6Q8R",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "S0T2U4V",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "W6X8Y0Z",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "A2B4C6D",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "E8F0G2H",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "I4J6K8L",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "M0N2O4P",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "Q6R8S0T",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "U2V4W6X",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "Y8Z0A2B",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "C4D6E8F",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "G0H2I4J",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "K6L8M0N",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "O2P4Q6R",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "S8T0U2V",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "W4X6Y8Z",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "A0B2C4D",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "E6F8G0H",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "I2J4K6L",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "M8N0O2P",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "Q4R6S8T",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "U0V2W4X",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "Y6Z8A0B",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "C2D4E6F",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "G8H0I2J",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "K4L6M8N",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "O0P2Q4R",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "S6T8U0V",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "W2X4Y6Z",
+      "stars": 500,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "STAR1000A",
+      "stars": 1000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "GIFT1000A",
+      "stars": 1000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "NEW1000A",
+      "stars": 1000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "PLAY1000A",
+      "stars": 1000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "FUN1000A",
+      "stars": 1000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "WIN1000A",
+      "stars": 1000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "JOIN1000A",
+      "stars": 1000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "LUCK1000A",
+      "stars": 1000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "GOLD1000A",
+      "stars": 1000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "VIP1000A",
+      "stars": 1000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "HAPPY1000",
+      "stars": 1000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "SMART1000",
+      "stars": 1000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "BRAVE1000",
+      "stars": 1000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "HERO1000A",
+      "stars": 1000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "MAGIC1000",
+      "stars": 1000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "POWER1000",
+      "stars": 1000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "SHINE1000",
+      "stars": 1000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "DREAM1000",
+      "stars": 1000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "HOPE1000A",
+      "stars": 1000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "MEGA5000A",
+      "stars": 5000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "SUPER5000B",
+      "stars": 5000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "ULTRA5000C",
+      "stars": 5000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "LEGEND5000D",
+      "stars": 5000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "HERO5000E",
+      "stars": 5000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "VIP5000F",
+      "stars": 5000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "GOLD5000G",
+      "stars": 5000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "PLATINUM5K",
+      "stars": 5000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "DIAMOND5K",
+      "stars": 5000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "MASTER5K",
+      "stars": 5000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "SUPREME10K",
+      "stars": 10000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "EMPEROR10K",
+      "stars": 10000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "LEGENDARY10K",
+      "stars": 10000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "MYTHICAL10K",
+      "stars": 10000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "DIVINE10K",
+      "stars": 10000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "COSMIC10K",
+      "stars": 10000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "ETERNAL10K",
+      "stars": 10000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "INFINITY10K",
+      "stars": 10000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "OMEGA10K",
+      "stars": 10000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "ALPHA10K",
+      "stars": 10000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "X7K9M2N",
+      "stars": 10000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "P4Q6R8S",
+      "stars": 10000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "T1U3V5W",
+      "stars": 10000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "Y8Z0A2B",
+      "stars": 10000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "C5D7E9F",
+      "stars": 10000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "G2H4I6J",
+      "stars": 10000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "K9L1M3N",
+      "stars": 10000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    },
+    {
+      "code": "X7K9M2N",
+      "stars": 60000,
+      "used": false,
+      "usedAt": null,
+      "usedBy": null,
+      "createdAt": "2025-06-28T12:00:00.000Z"
+    }
+  ]
+} 
